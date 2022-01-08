@@ -34,8 +34,7 @@ jobs:
           echo "The bazel-bin folder contains:"
           export OUTPUT_DIR=`readlink -f bazel-bin`
           echo "The OUTPUT_DIR is ${OUTPUT_DIR}"
-        env:
-          OUTPUT_DIR: "${OUTPUT_DIR}"
+          env:
       - name: 'Upload Artifact'
         uses: actions/upload-artifact@v2
         with:
