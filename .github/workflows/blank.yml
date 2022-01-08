@@ -33,9 +33,9 @@ jobs:
           cd java-tutorial
           ../bin/bazel build //:ProjectRunner
           ls -la
-      # - name: 'Upload Artifact'
-      #   uses: actions/upload-artifact@v2
-      #   with:
-      #     name: ProjectRunner*
-      #     path: java-tutorial/bazel-bin/
-      #     retention-days: 5
+      - name: 'Upload Artifact'
+        uses: actions/upload-artifact@v2
+        with:
+          name: ProjectRunner
+          path: java-tutorial/bazel-bin/
+          retention-days: 5
