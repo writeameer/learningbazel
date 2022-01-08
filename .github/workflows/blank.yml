@@ -32,3 +32,9 @@ jobs:
           echo "${PWD}"
           cd java-tutorial
           ../bin/bazel build //:ProjectRunner
+      - name: 'Upload Artifact'
+        uses: actions/upload-artifact@v2
+        with:
+          name: ProjectRunner*
+          path: ./bazel-bin/
+          retention-days: 5
