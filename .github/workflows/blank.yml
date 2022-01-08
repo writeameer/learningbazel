@@ -39,5 +39,5 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: ProjectRunner.jar
-          path: ${{ OUTPUT_DIR }}
+          path: ${{ env.OUTPUT_DIR }}
           retention-days: 5
