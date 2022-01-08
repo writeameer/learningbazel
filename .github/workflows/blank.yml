@@ -32,9 +32,9 @@ jobs:
           cd java-tutorial
           ../bin/bazel build //:ProjectRunner
           echo "The bazel-bin folder contains:"
-          export mydir=`readlink -f bazel-bin`
+          export OUTPUT_DIR=`readlink -f bazel-bin`
         env:
-          OUTPUT_DIR: "${mydir}"
+          OUTPUT_DIR: "${OUTPUT_DIR}"
       - name: 'Upload Artifact'
         uses: actions/upload-artifact@v2
         with:
