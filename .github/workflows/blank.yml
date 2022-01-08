@@ -29,5 +29,6 @@ jobs:
       - name: Run a multi-line script
         run: |
           ls -la
-          echo ${PWD}
-          // ./bin/bazel build //:ProjectRunner
+          echo "${PWD}"
+          cd java-tutorial
+          ../bin/bazel build //:ProjectRunner
