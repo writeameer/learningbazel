@@ -31,8 +31,8 @@ jobs:
           ls -la
           cd java-tutorial
           ../bin/bazel build //:ProjectRunner
-          ls -la
-          echo "${PWD}"
+          ls -la ./bazel-bin
+          echo "The current folder is: ${PWD}"
       - name: 'Upload Artifact'
         uses: actions/upload-artifact@v2
         with:
