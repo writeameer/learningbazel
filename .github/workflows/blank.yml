@@ -32,12 +32,12 @@ jobs:
           cd java-tutorial
           ../bin/bazel build //:ProjectRunner
           echo "The bazel-bin folder contains:"
-          cd ./bazel-bin
-          echo "The current folder is: ${PWD}"
-          ls -la
+          export mydir=`readlink -f bazel-bin`
+        env:
+          OUTPUT_DIR: ${mydir}          
       - name: 'Upload Artifact'
         uses: actions/upload-artifact@v2
         with:
           name: ProjectRunner.jar
-          path: ./java-tutorial/bazel-bin/
+          path: ${{ OUTPUT_DIR }}
           retention-days: 5
