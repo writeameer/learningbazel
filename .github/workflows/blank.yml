@@ -33,6 +33,7 @@ jobs:
           ../bin/bazel build //:ProjectRunner
           echo "The bazel-bin folder contains:"
           export OUTPUT_DIR=`readlink -f bazel-bin`
+          echo "The OUTPUT_DIR is ${OUTPUT_DIR}"
         env:
           OUTPUT_DIR: "${OUTPUT_DIR}"
       - name: 'Upload Artifact'
